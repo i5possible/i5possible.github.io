@@ -1,9 +1,106 @@
----
-layout: default
-title: Hong Liang's Blog
----
-<div class="blurb">
-    <h1>Hi there, I'm Hong Liang!</h1>
-    <p>This is my first post. I am very excited!</p>
-    <a href="/my/index.html"> link </a>
-</div><!-- /.blurb -->
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title> ～小清～  情人节快乐～～</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+
+</head>
+
+<body>
+
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">/**</span><br />
+			<span class="space"/><span class="comments">*2017—02-14</span><br />
+			<span class="space"/><span class="comments">*/</span><br />
+			ME : <span class="keyword">Mr</span> LIANG<br />
+			YOU : <span class="keyword">Mrs</span> GUO<br />
+			<span class="comments"></span>// Never remembered when we met<br />
+			不曾记得我们何时相遇<br />
+			<span class="comments">// Dare not to think about separating</span><br />
+			也不愿去想何时会分离<br />
+			<span class="comments">// As time goes on</span><br />
+			时光流逝<br />
+			<span class="comments">// As the days went by</span><br />
+			岁月抽离<br />
+			<span class="comments">// I never forgot you</span><br />
+			我始终记得你<br />
+			<span class="comments">// Your sweet smile</span><br />
+			你甜美的笑容<br />
+			<span class="comments">// Your beautiful shadow</span><br />
+			你靓丽的身影<br />
+			<br />
+			<span class="keyword"> 离开深圳的日子里，常常想起你 </span><br />
+			<span class="keyword"> 等着你的消息 </span><br />
+			<span class="keyword"> 等待你的归来 </span><br />
+			<br />
+			<span class="signature"> 梁鸿 </span><br />
+			<br>
+			<br>
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					幸福的日子里 <br />
+					<span> </span>每天都是 <br />
+					<span> </span><span> </span>   情人节
+					<!--<div id="elapseClock"></div>-->
+				</div>
+				<div id="loveu">
+					<br/>
+					<div class="signature"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(2013, 2, 28);
+together.setHours(20);
+together.setMinutes(0);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+</body>
+</html>
