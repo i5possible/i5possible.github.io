@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Liang Hong's first post"
 date: 2017-02-13
 ---
