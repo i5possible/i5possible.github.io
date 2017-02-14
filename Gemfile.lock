@@ -92,6 +92,8 @@ GEM
       coffee-script (~> 2.2)
     jekyll-default-layout (0.1.4)
       jekyll (~> 3.0)
+    jekyll-docs (3.3.1)
+      jekyll (= 3.3.1)
     jekyll-feed (0.8.0)
       jekyll (~> 3.3)
     jekyll-gist (1.4.0)
@@ -196,6 +198,8 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages (= 120)
+  jekyll-docs
+  jekyll-theme-cayman
 
 BUNDLED WITH
    1.14.4
