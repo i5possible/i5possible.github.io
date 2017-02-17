@@ -1,17 +1,38 @@
 title: i5possible 
 
 name: Hong Liang, Thoughtworks
-description: I have "possible", I got everything done!
+description: 
+    I have "possible"! <br\>
+    I got everything done!
 markdown: kramdown
 
+encoding: uft-8
+permalink: /:categories/:title.html
 
 defaults: 
     -
         scope:
+            path: ""
+        values:
+            layout: "default"
+            author: "Hong Liang"
+    -
+        scope:
             path: "post"
-            type: "posts"
+            type: "tips"
+        values:
+            layout: "default"
+    -
+        scope:
+            path: "thoughts"
+            type: "thoughts"
+        values:
+            layout: "default"
+    -
+        scope:
+            path: "dairy"
+            type: "dairy"
         values:
             layout: "default"
 
 theme: jekyll-theme-cayman
-
