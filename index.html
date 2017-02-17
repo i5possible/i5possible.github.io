@@ -5,4 +5,9 @@ title: Hong Liang's Blog
 <div class="test">
     <h1>Hi there, I'm Hong Liang!</h1>
     <p>This is my main page. I'll write my thoughts and my knowleged down here!</p>
+    <ul>
+        {% for post in site.posts %}
+            <li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ul>
 </div><!-- /.blurb -->

@@ -1,9 +1,17 @@
-title: Hong Liang's space
+title: i5possible 
 
 name: Hong Liang, Thoughtworks
-description: This used cayman theme
+description: I have "possible", I got everything done!
 markdown: kramdown
 
+
+defaults: 
+    -
+        scope:
+            path: "post"
+            type: "posts"
+        values:
+            layout: "default"
 
 theme: jekyll-theme-cayman
 
