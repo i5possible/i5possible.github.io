@@ -1,5 +1,4 @@
 ---
-title: MongoDB basic manul
 tag: manual
 category: database
 show-on-main-page: false
@@ -37,7 +36,7 @@ Mongo database is a document file database.
 
 query: document using query operators.
 
-###### examples:
+##### examples:
 ```json
 db.students.find({
     score: { 
@@ -80,8 +79,9 @@ criteria is just like the query in find()
 
 action use Update Operators 
 
-###### examples :
+##### examples :
 
+``` json
 db.inventory.updateOne(
    { item: "paper" },
    {
@@ -89,6 +89,7 @@ db.inventory.updateOne(
      $currentDate: { lastModified: true }
    }
 )
+```
 
 #### remove
 - db.myCollection.remove()
