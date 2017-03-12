@@ -1,6 +1,6 @@
 ---
 category: blog
-tags: review
+tags: Review
 title: Learning-Path
 ---
 # Learning-Path

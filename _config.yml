@@ -6,7 +6,6 @@ description:
     I got everything done!
 markdown: kramdown
 
-encoding: uft-8
 permalink: /:categories/:title.html
 
 defaults: 
