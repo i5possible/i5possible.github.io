@@ -175,7 +175,7 @@ I don't understand what's the projection meaning.
 - $max Only updates the field if the specified value is greater than the existing field value
 - $currentDate Sets the value of a field to current date, either as a Date or a Timestamp
 
-```json
+```json
 db.users.update(
    { _id: 1 },
    {

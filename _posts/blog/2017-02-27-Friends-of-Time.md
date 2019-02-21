@@ -1,7 +1,7 @@
 ---
 tags : Thought
 category : blog
-title : 时间的朋友
+title : 《时间的朋友》摘录
 ---
 ## 第0章 困境
 ### 问题

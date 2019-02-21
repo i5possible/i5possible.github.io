@@ -1,9 +1,9 @@
 title: i5possible 
 
-name: Hong Liang, Thoughtworks
+name: Hong Liang
 description: 
-    I have "possible"! <br />
-    I got everything done!
+    # I have "possible"! <br />
+    # I got everything done!
 markdown: kramdown
 
 permalink: /:categories/:title.html

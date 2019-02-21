@@ -1,13 +1,13 @@
 ---
 tag: index 
 category: cheat-sheet
-title: Cheat-Sheet List
+title: Cheat-Sheet TOC
 # published: false
 published: true
 ---
 
 [visio-markdown]: /assets/cheat-sheet/Markdown.pdf "visio-markdown"
-[markdown-syntax]: /assets/cheat-sheet/markdown-cheatsheet-online.pdf "markdown-syntax"
+
 [git]: /assets/cheat-sheet/github-git-cheat-sheet.pdf
 
 [mongo-manual]: /database/mongo-cheat-sheet
@@ -16,8 +16,6 @@ published: true
 
 
 [Visio Markdown][visio-markdown]
-
-[Markdown Syntax][markdown-syntax]
 
 [Mongo Manual][mongo-manual]
 
