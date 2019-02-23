@@ -1,6 +1,6 @@
 ---
 tag: manual
-category: database
+category: cheat-sheet
 show-on-main-page: false
 ---
 ## MongoDB Package Components

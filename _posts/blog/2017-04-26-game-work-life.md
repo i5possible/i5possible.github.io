@@ -1,5 +1,5 @@
 ---
-tags : Thoughts
+tags : thoughts
 category : blog
 title :  游戏/工作/生活
 published: true
