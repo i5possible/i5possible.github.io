@@ -1,7 +1,7 @@
 ---
 tags : Thoughts
 category : blog
-title :  游戏|工作|生活
+title :  游戏/工作/生活
 published: true
 ---
 # 游戏 vs 工作 vs 生活
