@@ -2,7 +2,7 @@
 tags : Thoughts
 category : blog
 title :  游戏|工作|生活
-published: false
+published: true
 ---
 # 游戏 vs 工作 vs 生活
 ### 游戏吸引人的地方主要有以下几个方面：
