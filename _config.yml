@@ -7,6 +7,8 @@ description:
 markdown: kramdown
 
 permalink: /:categories/:title.html
+show_excerpts: true
+excerpt_separator: <!--more-->
 
 defaults: 
     -

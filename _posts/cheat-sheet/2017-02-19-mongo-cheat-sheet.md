@@ -10,6 +10,9 @@ Mongo database is a document file database.
 - "sudo" mongod "option"
 - mongodump
 - mongorestore : mongodump and mongostore can be used for backups in a standalone server. There will be some issue when used in shard.
+
+<!--more-->
+
 - bsondump : bsondump is a diagnostic tool for inspecting BSON files, not a tool for data ingestion or other application use.bsondump collection.bson > collection.json
 - mongoexport : mongoexport is a utility that produces a JSON or CSV export of data stored in a MongoDB instance. The rich BSON will not export and import correctly.
 - mongoimport : mongoimport can import the JSON or CSV file.
