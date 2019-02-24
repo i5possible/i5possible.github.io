@@ -37,4 +37,5 @@ defaults:
             layout: "default"
 
 # theme: jekyll-theme-cayman
-theme: minima
+# theme: minima
+theme: jekyll-theme-hacker
