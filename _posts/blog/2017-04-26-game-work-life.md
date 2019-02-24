@@ -4,7 +4,6 @@ category : blog
 title :  游戏/工作/生活
 published: true
 ---
-# 游戏 vs 工作 vs 生活
 ### 游戏吸引人的地方主要有以下几个方面：
 - 明确的目标
 - 可视化的进度
