@@ -9,7 +9,13 @@ title: i5posible's Blog
             {%- assign date_format = site.minima.date_format | default: "%b %-d,
             %Y" -%}
             <span class="post-meta">{{ site.time| date: date_format }}</span>
-            <a class="post-link" href="/resume/">梁鸿的简历 </a>
+            <a class="post-link" href="/resume/">简历 </a>
+        </li>
+        <li>
+            {%- assign date_format = site.minima.date_format | default: "%b %-d,
+            %Y" -%}
+            <span class="post-meta">{{ site.time| date: date_format }}</span>
+            <a class="post-link" href="/resume_en/">Resume</a>
         </li>
         {% for post in site.posts %}
         <li>
