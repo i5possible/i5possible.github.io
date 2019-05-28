@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keyword" content="爱心跳动">
+    <meta name="description" content="爱心跳动">
+    <title>爱心跳动特效</title>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-color: #000000;
+        }
+
+        .box {
+            width: 400px;
+            top: 400px;
+            height: 400px;
+            margin-top: 460px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: move 0.8s infinite alternate;
+            animation-timing-function: ease;
+            /*动画名称 运动时间 运动次数infinite表示无限次 alternate往返效果相同*/
+        }
+
+        @keyframes move {
+            100% {
+                transform: scale(1.2);
+                /*变大1.2倍*/
+            }
+        }
+
+        @keyframes yuxuan {
+            0% {
+                display: block;
+                opacity: 1;
+            }
+
+            90% {
+                transform: scale(2);
+                display: block;
+                opacity: 0;
+            }
+
+            100% {
+                display: none;
+                opacity: 0;
+            }
+        }
+
+        .box .left,
+        .box .right {
+            width: 150px;
+            height: 240px;
+            background-color: red;
+            border-radius: 75px 75px 0 0;
+            float: left;
+            position: relative;
+            /*相对大div定位*/
+            left: 153px;
+            box-shadow: 0 0 40px red;
+            /*设置阴影效果，其值分别表示水平偏移量，竖直偏移量，阴影大小，颜色*/
+        }
+
+        .box .left {
+            transform: rotate(45deg);
+        }
+
+        .box .right {
+            transform: rotate(-45deg);
+            margin-left: -213px;
+        }
+
+        .textbox {
+            width: 400px;
+            height: 400px;
+            margin-top: -350px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: yuxuan 1.6s infinite forwards;
+        }
+
+        p {
+            font-size: 50px;
+            text-align: center;
+            color: white;
+        }
+
+        span {
+            margin: 0 0 0 10;
+            left: 150px;
+            top: 0px;
+            position: absolute;
+            z-index: 100;
+            /* font-family:'Courier New', Courier, monospace; */
+            font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+            /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+            text-shadow: 0px 5px 8px black;
+            /* box-shadow: 0 0 40px white; */;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+    <<div class="textbox">
+        <p><span>雨轩</span></p>
+    </div>
+
+</body>
+
+</html>
