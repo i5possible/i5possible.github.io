@@ -13,10 +13,13 @@ export type PostData = {
   contentHtml?: string
 }
 
+export type PostParams = {
+  id: string
+  locale: string
+}
+
 export type PostProps = {
-  params: {
-    id: string
-  }
+  params: PostParams
 }
 
 const getSortedPostsData = (locale: string): PostData[] => {

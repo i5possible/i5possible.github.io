@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "publish": "next build && gh-pages -d out",
+    "gh-pages": "next build && gh-pages -d out -b main",
     "start": "next start",
     "lint": "next lint"
   },
@@ -16,6 +16,7 @@
     "@mui/material": "^6.0.2",
     "@react-three/fiber": "^8.17.6",
     "animejs": "^3.2.2",
+    "gh-pages": "^6.1.1",
     "gray-matter": "^4.0.3",
     "next": "14.2.8",
     "react": "^18",

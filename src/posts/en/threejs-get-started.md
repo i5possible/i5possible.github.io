@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "Get started with Three.js"
 date: "2024-09-05"
 ---
 
