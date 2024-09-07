@@ -3,12 +3,12 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react'
 import * as THREE from 'three'
-import { Font, FontLoader } from 'three/examples/jsm/loaders/FontLoader'
-import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry'
+import { Font, FontLoader } from 'three/examples/jsm/loaders/FontLoader.js'
+import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js'
 
 const TextComponent = () => {
   const mountRef = useRef<HTMLDivElement>(null)
-  const [font, setFont] = useState<Font>(null)
+  const [font, setFont] = useState<Font>()
   const [group, setGroup] = useState<THREE.Group>()
   const [renderer, setRenderer] = useState<THREE.WebGLRenderer>()
   const [scene, setScene] = useState<THREE.Scene>()
@@ -16,6 +16,7 @@ const TextComponent = () => {
 
   useEffect(() => {
     if (mountRef.current) {
+      let mount: HTMLDivElement = mountRef.current
       console.log(`Mounting Three.js scene to: ${mountRef.current}`)
       // Setup Three.js scene
       const width = mountRef.current.clientWidth
@@ -130,8 +131,12 @@ const TextComponent = () => {
 
       const textMesh1 = new THREE.Mesh(textGeo, materials)
       // Center the text
-      textMesh1.position.x =
-        -0.5 * (textGeo.boundingBox.max.x - textGeo.boundingBox.min.x)
+      if (textGeo.boundingBox) {
+        textMesh1.position.x =
+          -0.5 * (textGeo.boundingBox.max.x - textGeo.boundingBox.min.x)
+      } else {
+        console.error('textGeo.boundingBox is undefined')
+      }
       // Move the text up
       textMesh1.position.y = 30
 
