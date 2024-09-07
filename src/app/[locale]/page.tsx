@@ -17,7 +17,7 @@ const Home = async ({ params }: LocalePageProps) => {
       <ul>
         {allPostsData.map(({ id, title, date }) => (
           <li key={id}>
-            <a href={`/${locale}/${id}`}>{title}</a>
+            <a href={`/posts/${locale}/${id}`}>{title}</a>
             <br />
             <small>{date}</small>
           </li>
