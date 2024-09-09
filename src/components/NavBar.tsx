@@ -1,97 +1,69 @@
 import React from 'react'
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Button,
-  IconButton,
-  Menu,
-  MenuItem,
-  Container,
-} from '@mui/material'
-import MenuIcon from '@mui/icons-material/Menu'
+import { AppBar, Toolbar, Typography, Box, Container } from '@mui/material'
 import Link from 'next/link'
 
-const NavBar: React.FC = () => {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
-  const open = Boolean(anchorEl)
-
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget)
-  }
-
-  const handleClose = () => {
-    setAnchorEl(null)
-  }
+const NavigationBar = () => {
+  const menuItems = [
+    { label: 'Home', href: '/home' },
+    { label: 'Blog', href: '/en' },
+    { label: 'Contact', href: '/contact' },
+  ]
 
   return (
-    <AppBar position="static">
-      <Container>
-        <Toolbar>
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            onClick={handleClick}
-            sx={{ display: { xs: 'block', md: 'none' } }}
+    <AppBar position="static" color="default" elevation={0}>
+      <Container maxWidth="xl">
+        <Toolbar disableGutters sx={{ height: 64 }}>
+          <Typography
+            variant="h6"
+            noWrap
+            component={Link}
+            href="/home"
+            sx={{
+              mr: 2,
+              fontWeight: 700,
+              color: 'inherit',
+              textDecoration: 'none',
+              '&:hover': {
+                color: 'primary.main',
+              },
+            }}
           >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <Link href="/" passHref>
-              <Typography
-                variant="h6"
-                color="inherit"
-                sx={{ textDecoration: 'none', color: 'inherit' }}
-              >
-                My Blog
-              </Typography>
-            </Link>
+            i5possible
           </Typography>
-          <div style={{ display: 'flex', gap: '16px', marginLeft: 'auto' }}>
-            <Button color="inherit">
-              <Link href="/" passHref>
-                Home
-              </Link>
-            </Button>
-            <Button color="inherit">
-              <Link href="/about" passHref>
-                About
-              </Link>
-            </Button>
-            <Button color="inherit">
-              <Link href="/contact" passHref>
-                Contact
-              </Link>
-            </Button>
-          </div>
-          <Menu
-            id="menu-appbar"
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            sx={{ display: { xs: 'block', md: 'none' } }}
-          >
-            <MenuItem onClick={handleClose}>
-              <Link href="/" passHref>
-                Home
-              </Link>
-            </MenuItem>
-            <MenuItem onClick={handleClose}>
-              <Link href="/about" passHref>
-                About
-              </Link>
-            </MenuItem>
-            <MenuItem onClick={handleClose}>
-              <Link href="/contact" passHref>
-                Contact
-              </Link>
-            </MenuItem>
-          </Menu>
+          <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
+            {menuItems.map((item) => (
+              <Typography
+                key={item.label}
+                component={Link}
+                href={item.href}
+                sx={{
+                  mx: 2,
+                  color: 'inherit',
+                  textDecoration: 'none',
+                  position: 'relative',
+                  '&:hover': {
+                    color: 'primary.main',
+                    '&::after': {
+                      content: '""',
+                      position: 'absolute',
+                      width: '100%',
+                      height: '2px',
+                      bottom: -2,
+                      left: 0,
+                      backgroundColor: 'primary.main',
+                      transition: 'all 0.3s ease',
+                    },
+                  },
+                }}
+              >
+                {item.label}
+              </Typography>
+            ))}
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>
   )
 }
 
-export default NavBar
+export default NavigationBar

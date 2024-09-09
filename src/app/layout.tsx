@@ -1,4 +1,5 @@
-import { CssBaseline } from '@mui/material'
+import NavBar from '@/components/NavBar'
+import ThemeRegistry from '@/app/theme'
 
 export const metadata = {
   title: 'i5possible',
@@ -11,13 +12,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    // 添加 CssBaseline 组件
-
     <html lang="en">
       <body>
         <main>
-          <CssBaseline />
-          {children}
+          <ThemeRegistry>
+            <NavBar />
+            {children}
+          </ThemeRegistry>
         </main>
       </body>
     </html>

@@ -10,6 +10,7 @@ export type PostData = {
   id: string
   title: string
   date: string
+  expert: string
   contentHtml?: string
 }
 
@@ -35,7 +36,7 @@ const getSortedPostsData = (locale: string): PostData[] => {
 
     return {
       id,
-      ...(matterResult.data as { date: string; title: string }),
+      ...(matterResult.data as { date: string; title: string; expert: string }),
     }
   })
 
@@ -73,7 +74,7 @@ const getPostData = async (id: string, locale: string): Promise<PostData> => {
   return {
     id,
     contentHtml,
-    ...(matterResult.data as { date: string; title: string }),
+    ...(matterResult.data as { date: string; title: string; expert: string }),
   }
 }
 

@@ -1,6 +1,7 @@
 ---
-title: "Get started with Three.js"
+title: "Another posts"
 date: "2024-09-05"
+expert: 'This is a beginner tutorial for Three.js. We will cover the basics of setting up a scene, adding objects, and rendering the scene.'
 ---
 
 # Hello World
