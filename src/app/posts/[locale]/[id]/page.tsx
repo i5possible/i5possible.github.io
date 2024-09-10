@@ -5,7 +5,9 @@ import {
   PostParams,
   PostProps,
 } from '@/lib/posts'
-import { notFound } from 'next/navigation'
+import '@/styles/github-markdown.css'
+import { CustomMDX } from '@/components/CustomMDX'
+import React from 'react'
 
 export function generateStaticParams(): PostParams[] {
   const locales = ['en', 'zh'] // 定义支持的语言列表
@@ -22,18 +24,28 @@ export function generateStaticParams(): PostParams[] {
   return allParams
 }
 
+// type PostProps = {
+//   source: MDXRemoteSerializeResult
+//   frontMatter: {
+//     title: string
+//     date: string
+//   }
+// }
+
 const Post = async ({ params }: PostProps) => {
-  const postData: PostData = await getPostData(params.id, params.locale)
-
-  if (!postData) {
-    notFound()
-  }
-
+  const { title, date, content }: PostData = await getPostData(
+    params.id,
+    params.locale,
+  )
   return (
-    <div>
-      <h1>{postData.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: postData.contentHtml || '' }} />
-    </div>
+    <>
+      <h1>{title}</h1>
+      <time dateTime={date}>{date}</time>
+      <article className={'prose'}>
+        <CustomMDX source={content!} components={{}} />
+      </article>
+    </>
   )
 }
+
 export default Post

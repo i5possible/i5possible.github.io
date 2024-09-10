@@ -1,0 +1,83 @@
+---
+title: "开始使用 Three.js"
+date: "2024-09-05"
+expert: "Three.js 是一个强大的 JavaScript 库，用于在浏览器中创建 3D 图形。它易于上手，并允许开发人员创建令人惊叹的可视化效果、游戏和互动体验。本指南将帮助你以最少的代码设置一个简单的 Three.js 场景。"
+---
+
+Three.js 是一个强大的 JavaScript 库，用于在浏览器中创建 3D 图形。它易于上手，并允许开发人员创建令人惊叹的可视化效果、游戏和互动体验。本指南将帮助你以最少的代码设置一个简单的 Three.js 场景。
+
+### 步骤 1：设置你的项目
+
+首先，创建一个新的文件夹用于你的项目，并初始化一个基本的 HTML 文件。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js 入门</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+```
+
+### 步骤 2：创建一个基本的 Three.js 场景
+
+创建一个名为 `app.js` 的文件，并添加以下代码来设置一个基本的场景：
+
+```javascript
+// 初始化场景、相机和渲染器
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+// 创建一个立方体
+const geometry = new THREE.BoxGeometry();
+const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+const cube = new THREE.Mesh(geometry, material);
+
+scene.add(cube);
+camera.position.z = 5;
+
+// 动画循环
+function animate() {
+    requestAnimationFrame(animate);
+    cube.rotation.x += 0.01;  // 旋转立方体
+    cube.rotation.y += 0.01;  // 旋转立方体
+    renderer.render(scene, camera);
+}
+
+animate();
+```
+
+### 步骤 3：代码说明
+
+1. 场景、相机和渲染器设置：
+- `THREE.Scene()`: 创建一个新场景，所有对象都将放置在此场景中。
+- `THREE.PerspectiveCamera()`: 定义相机视图，具有 75 度的视场角。
+- `THREE.WebGLRenderer()`: 使用 WebGL 渲染场景。
+
+2. 创建一个立方体：
+- `THREE.BoxGeometry()`: 定义立方体的形状（几何体）。
+- `THREE.MeshBasicMaterial()`: 定义立方体的外观（材质）。
+- `THREE.Mesh()`: 将几何体和材质结合成一个 3D 对象。
+
+3. 动画循环：
+- `animate()`: 这个函数持续运行，旋转立方体并渲染场景。
+
+### 步骤 4：运行代码
+
+只需在浏览器中打开 HTML 文件，你就会看到一个旋转的绿色立方体！
+
+[Example](/examples/threejs-get-started)

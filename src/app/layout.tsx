@@ -1,5 +1,6 @@
 import NavBar from '@/components/NavBar'
 import ThemeRegistry from '@/app/theme'
+import '@/styles/global.css'
 
 export const metadata = {
   title: 'i5possible',

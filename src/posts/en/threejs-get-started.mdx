@@ -1,0 +1,83 @@
+---
+title: "Get started with Three.js"
+date: "2024-09-05"
+expert: "Three.js is a powerful JavaScript library for creating 3D graphics in the browser. It's beginner-friendly and allows developers to create stunning visualizations, games, and interactive experiences. This guide will help you set up a simple Three.js scene with minimal code."
+---
+
+Three.js is a powerful JavaScript library for creating 3D graphics in the browser. It's beginner-friendly and allows developers to create stunning visualizations, games, and interactive experiences. This guide will help you set up a simple Three.js scene with minimal code.
+
+### Step 1: Set Up Your Project
+
+First, create a new folder for your project and initialize a basic HTML file.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js Starter</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+```
+
+### Step 2: Create a Basic Three.js Scene
+
+Create a file named `app.js` and add the following code to set up a basic scene:
+
+```javascript
+// Initialize Scene, Camera, and Renderer
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+// Create a Cube
+const geometry = new THREE.BoxGeometry();
+const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+const cube = new THREE.Mesh(geometry, material);
+
+scene.add(cube);
+camera.position.z = 5;
+
+// Animation Loop
+function animate() {
+    requestAnimationFrame(animate);
+    cube.rotation.x += 0.01;  // Rotate the cube
+    cube.rotation.y += 0.01;  // Rotate the cube
+    renderer.render(scene, camera);
+}
+
+animate();
+```
+
+### Step 3: Explanation of the Code
+
+1. Scene, Camera, and Renderer Setup:
+- `THREE.Scene()`: This creates a new scene where all objects will be placed.
+- `THREE.PerspectiveCamera()`: Defines the camera view with a 75-degree field of view.
+- `THREE.WebGLRenderer()`: Renders the scene using WebGL.
+
+2. Creating a Cube:
+- `THREE.BoxGeometry()`: Defines the shape (geometry) of the cube.
+- `THREE.MeshBasicMaterial()`: Defines the appearance (material) of the cube.
+- `THREE.Mesh()`: Combines geometry and material into a single 3D object.
+
+3. Animation Loop:
+- `animate()`: This function runs continuously, rotating the cube and rendering the scene.
+
+### Step 4: Run the Code
+
+Simply open the HTML file in your browser, and you should see a spinning green cube!
+
+[Example](/examples/threejs-get-started)

@@ -1,10 +1,14 @@
 /** @type {import('next').NextConfig} */
+import createMDX from '@next/mdx'
+// import remarkGfm from 'remark-gfm'
+
 const nextConfig = {
   // i18n can't be used along with output:export
   // i18n: {
   //   locales: ['en', 'zh'],
   //   defaultLocale: 'zh'
   // },
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   output: 'export',
   reactStrictMode: false,
   /**
@@ -24,5 +28,13 @@ const nextConfig = {
    */
   // basePath: "/nextjs-github-pages",
 };
+const withMDX = createMDX({
+  // Add markdown plugins here, as desired
+  options: {
+    // remarkPlugins: [remarkGfm],
+    rehypePlugins: [],
+  },
+})
 
-export default nextConfig;
+
+export default withMDX(nextConfig);
