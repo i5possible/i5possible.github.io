@@ -3,11 +3,7 @@
 import GetStartedWithThreeJS from '@/components/GetStartedWithThreeJS'
 import React from 'react'
 
-type ComponentProps = {
-  children: React.ReactNode
-}
-
-const Component = ({ children }: ComponentProps) => {
+const Component = () => {
   return <GetStartedWithThreeJS />
 }
 
