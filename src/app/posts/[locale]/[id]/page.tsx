@@ -5,7 +5,6 @@ import {
   PostParams,
   PostProps,
 } from '@/lib/posts'
-import '@/styles/github-markdown.css'
 import { CustomMDX } from '@/components/CustomMDX'
 import React from 'react'
 
@@ -23,14 +22,6 @@ export function generateStaticParams(): PostParams[] {
 
   return allParams
 }
-
-// type PostProps = {
-//   source: MDXRemoteSerializeResult
-//   frontMatter: {
-//     title: string
-//     date: string
-//   }
-// }
 
 const Post = async ({ params }: PostProps) => {
   const { title, date, content }: PostData = await getPostData(

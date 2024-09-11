@@ -1,5 +1,5 @@
 import React from 'react'
-import { AppBar, Toolbar, Typography, Box, Container } from '@mui/material'
+import { AppBar, Box, Container, Toolbar, Typography } from '@mui/material'
 import Link from 'next/link'
 
 const NavigationBar = () => {
@@ -10,11 +10,29 @@ const NavigationBar = () => {
   ]
 
   return (
-    <AppBar position="static" color="default" elevation={0}>
-      <Container maxWidth="xl">
-        <Toolbar disableGutters sx={{ height: 64 }}>
+    <AppBar
+      sx={{
+        backgroundColor: 'hsla(0, 0%, 100%, 0.6)',
+        backdropFilter: 'blur(8px)',
+      }}
+      position="fixed"
+      color="default"
+      elevation={0}
+    >
+      <Container
+        sx={{
+          margin: '0 auto',
+        }}
+      >
+        <Toolbar
+          disableGutters
+          sx={{
+            padding: '0 2rem',
+            height: 64,
+          }}
+        >
           <Typography
-            variant="h6"
+            variant="h5"
             noWrap
             component={Link}
             href="/home"
@@ -23,9 +41,6 @@ const NavigationBar = () => {
               fontWeight: 700,
               color: 'inherit',
               textDecoration: 'none',
-              '&:hover': {
-                color: 'primary.main',
-              },
             }}
           >
             i5possible
@@ -36,6 +51,7 @@ const NavigationBar = () => {
                 key={item.label}
                 component={Link}
                 href={item.href}
+                variant={'h6'}
                 sx={{
                   mx: 2,
                   color: 'inherit',
@@ -47,7 +63,7 @@ const NavigationBar = () => {
                       content: '""',
                       position: 'absolute',
                       width: '100%',
-                      height: '2px',
+                      height: '3px',
                       bottom: -2,
                       left: 0,
                       backgroundColor: 'primary.main',

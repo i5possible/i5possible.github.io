@@ -55,11 +55,11 @@ const sections = [
 
 const HomePage: React.FC = () => {
   return (
-    <Box>
+    <Container>
       <Box
         sx={{ backgroundColor: 'primary.main', color: 'common.white', py: 8 }}
       >
-        <Container maxWidth="lg">
+        <Container maxWidth="md">
           <Typography variant="h2" align="center" gutterBottom>
             欢迎来到我们的世界
           </Typography>
@@ -71,7 +71,7 @@ const HomePage: React.FC = () => {
       {sections.map((section, index) => (
         <ImageTextSection key={index} {...section} />
       ))}
-    </Box>
+    </Container>
   )
 }
 

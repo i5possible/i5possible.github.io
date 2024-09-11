@@ -18,7 +18,8 @@ import TelegramIcon from '@mui/icons-material/Telegram'
 import WordCloud from 'react-wordcloud'
 
 const words = [
-  { text: 'NodeJS', value: 120 },
+  { text: 'Leadership', value: 100 },
+  { text: 'NodeJS', value: 100 },
   { text: 'React', value: 100 },
   { text: 'Postgres', value: 80 },
   { text: 'Java', value: 80 },
@@ -85,7 +86,6 @@ export default function ContactPage() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        bgcolor: 'background.default',
       }}
     >
       <Card sx={{ maxWidth: 600, width: '100%' }}>
@@ -100,7 +100,7 @@ export default function ContactPage() {
           >
             <Avatar
               src="/placeholder.svg?height=120&width=120"
-              alt="陈明"
+              alt="梁鸿"
               sx={{ width: 120, height: 120, mb: 2 }}
             />
             <Typography variant="h4" component="h1" gutterBottom>
