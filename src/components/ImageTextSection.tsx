@@ -1,11 +1,12 @@
 'use client'
 import React from 'react'
-import { Box, Typography, useTheme, useMediaQuery } from '@mui/material'
+import { Box, Stack, Typography, useMediaQuery, useTheme } from '@mui/material'
+import Image from 'next/image'
 
 interface ImageTextSectionProps {
   imageSrc: string
   title: string
-  description: string
+  description: string | string[]
   imageOnLeft: boolean
   isDark: boolean
 }
@@ -27,6 +28,7 @@ const ImageTextSection: React.FC<ImageTextSectionProps> = ({
         flexDirection: isMobile ? 'column' : 'row',
         backgroundColor: isDark ? 'grey.900' : 'grey.100',
         color: isDark ? 'common.white' : 'common.black',
+        maxHeight: '400px',
       }}
     >
       <Box
@@ -35,8 +37,10 @@ const ImageTextSection: React.FC<ImageTextSectionProps> = ({
           order: isMobile ? 0 : imageOnLeft ? 0 : 1,
         }}
       >
-        <img
+        <Image
           src={imageSrc}
+          width={isMobile ? 400 : 600}
+          height={isMobile ? 270 : 400}
           alt={title}
           style={{
             width: '100%',
@@ -57,7 +61,17 @@ const ImageTextSection: React.FC<ImageTextSectionProps> = ({
         <Typography variant="h4" gutterBottom>
           {title}
         </Typography>
-        <Typography variant="body1">{description}</Typography>
+        <Stack direction={'column'} gap={2}>
+          {Array.isArray(description) ? (
+            description.map((paragraph, index) => (
+              <Typography key={index} variant="body1">
+                {paragraph}
+              </Typography>
+            ))
+          ) : (
+            <Typography variant="body1">{description}</Typography>
+          )}
+        </Stack>
       </Box>
     </Box>
   )
