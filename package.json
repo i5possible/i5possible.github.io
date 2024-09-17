@@ -2,12 +2,14 @@
   "name": "i5possible.github.io",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next",
     "build": "next build",
     "gh-pages": "next build && gh-pages -d out -b main",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "plop": "plop"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
