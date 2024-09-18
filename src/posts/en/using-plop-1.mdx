@@ -1,0 +1,84 @@
+---
+title: Using plop(By: Copilot)
+date: 2024-10-20
+expert: Plop is a front-end code generator that helps you quickly create file templates. It can reduce repetitive work and improve development efficiency. This guide will show you how to use Plop to create custom file templates.
+---
+
+# Using plop(By: Copilot)
+
+Plop is a front-end code generator that helps you quickly create file templates. It can reduce repetitive work and improve development efficiency. This guide will show you how to use Plop to create custom file templates.
+
+What we can do with Plop?
+- Create a blog post with title and date for different languages
+- Create a new component with a template
+- Create a new page with a template
+
+As long as you have a template, you can use Plop to generate files based on the template. Let's get started!
+
+## Step 1: Install Plop
+
+To get started with Plop, you need to install it globally on your system. You can do this using npm or yarn:
+
+```bash
+npm install -g plop
+# or
+yarn global add plop
+```
+
+## Step 2: Create a Plop Configuration File
+
+Next, you need to create a `plopfile.js` in the root of your project. This file will contain the configuration for your Plop templates. Here's an example of a simple Plop configuration file:
+
+```javascript
+module.exports = function (plop) {
+  plop.setGenerator('component', {
+    description: 'Create a new component',
+    prompts: [
+      {
+        type: 'input',
+        name: 'name',
+        message: 'Component name:',
+      },
+    ],
+    actions: [
+      {
+        type: 'add',
+        path: 'src/components/{{name}}/{{name}}.js',
+        templateFile: 'plop-templates/component.hbs',
+      },
+    ],
+  });
+}
+  ```
+
+In this configuration file, we define a generator named `component` that prompts the user for a component name and then creates a new component file based on the `component.hbs` template.
+
+## Step 3: Create a Template File
+
+Now, you need to create a template file for your Plop generator. This file will contain the structure of the file that Plop will generate. Here's an example of a simple component template file (`plop-templates/component.hbs`):
+
+```javascript
+import React from 'react';
+
+const {{name}} = () => {
+  return (
+    <div>
+      {{name}}
+    </div>
+  );
+}
+```
+
+This template file defines a simple React component that takes a `name` prop and renders it inside a `div` element.
+
+## Step 4: Run Plop
+
+Finally, you can run Plop in your terminal to generate a new component. Just run the following command and follow the prompts:
+
+```bash
+plop component
+```
+
+Plop will ask you for the component name and then generate a new component file in the `src/components` directory based on the template file.
+
+That's it! You've successfully created a new component using Plop. You can use Plop to create any kind of file template you need in your project. Happy coding!
