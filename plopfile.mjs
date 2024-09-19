@@ -1,7 +1,7 @@
 export default function (plop) {
   // create your generators here
   plop.setGenerator('post', {
-    description: 'generate empty posts',
+    description: 'generate empty post file',
     prompts: [
       {
         type: 'input',
@@ -22,8 +22,8 @@ export default function (plop) {
       },
       {
         type: 'input',
-        name: 'expert',
-        message: 'The expert of the post:',
+        name: 'summary',
+        message: 'The summary of the post:',
       },
     ],
     actions: (data) => {
